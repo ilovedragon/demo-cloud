@@ -1,7 +1,7 @@
 resource "aws_instance" "Webserver-terraform" {
-  ami           = "ami-06e2b86bab2edf4ee"
-  instance_type = "t2.micro"
-  user_data     = file("init-script.sh")
+  ami                    = "ami-06e2b86bab2edf4ee"
+  instance_type          = "t2.micro"
+  user_data              = file("init-script.sh")
   vpc_security_group_ids = [aws_security_group.web-ssh-sg.id]
 
   tags = {

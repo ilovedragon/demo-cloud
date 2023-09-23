@@ -1,5 +1,6 @@
 ## Terraform method - Infrastructure as a code
 ![Infrastructure-as-a-code-terraform](Infrastructure-as-a-code-terraform.png)
+
 ### Hello World web server - using terraform to deploy from local
 1. Install terraform. https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 2. Install AWS CLI. https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
