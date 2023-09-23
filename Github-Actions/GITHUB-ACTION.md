@@ -9,3 +9,7 @@ Pre-requisite: Add AWS credentials into the Github repository's Actions secrets 
 3. Once the workflow yaml file is pushed to github repository, it will trigger the running to execute the jobs.
 ![CICD-Terraform-Actions](CICD-Terraform-Actions.png)
 4. Basiclaly the runner wouild execute the terraform code and deploy the AWS EC2.
+
+---
+## Reference
+https://docs.github.com/en/actions/quickstart

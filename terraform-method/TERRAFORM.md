@@ -11,6 +11,7 @@
 ![terraform-workflow](terraform-workflow.png)
 
 ---
-## reference
+## Reference
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code
 https://spacelift.io/blog/terraform-ec2-instance
