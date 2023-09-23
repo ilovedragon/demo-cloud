@@ -32,6 +32,6 @@ jobs:
       - name: Terraform destroy
         id: destroy
         working-directory: ./terraform-method/terraform-files
-        run: terraform destroy
+        run: terraform destroy --auto-approve
 
   
