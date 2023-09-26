@@ -87,7 +87,7 @@ jobs:
           URL_set: ""
         run: |
           export URL_set=$(terraform output instance_public_dns)
-          export URL=$URL_set
+          export URL=URL_set
 
       - name: Verify Hello-World
         id: verify
