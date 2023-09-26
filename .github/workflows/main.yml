@@ -81,10 +81,7 @@ jobs:
         working-directory: ./terraform-method/terraform-files
         run: |
           terraform apply --auto-approve             
-          
-      - name: Verify Hello-World
-        id: verify
-        run : |
-          echo $(terraform output -json | jq -r .instance_public_ip.value)
+         
+
           
         
