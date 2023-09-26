@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   push: 
 
+env: 
+  URL: ""
+
 jobs: 
   Terraform-CI:
     name: Terraform CI
@@ -74,13 +77,11 @@ jobs:
         run: terraform plan 
 
       - name: Terraform apply
-        id: apply
-        env: 
-          URL: ""
+        id: apply        
         working-directory: ./terraform-method/terraform-files
         run: |
           terraform apply --auto-approve 
-          URL = $(terraofrm output instance_public_dns)
+          URL = $(terraform output instance_public_dns)
 
       - name: Verify Hello-World
         id: verify
