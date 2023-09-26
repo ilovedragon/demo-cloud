@@ -86,7 +86,7 @@ jobs:
         id: verify
         working-directory: ./terraform-method/terraform-files
         run: |
-          export URL=$(terraform output -json | jq -r .instance_public_ip.value)
+          export URL=$(terraform output instance_public_ip)|tr -d '"'))
           echo $URL
           curl $URL
           
