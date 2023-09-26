@@ -10,6 +10,7 @@ Pre-requisite: Add AWS credentials into the Github repository's Actions secrets 
 ![CICD-Terraform-Actions](CICD-Terraform-Actions.png)
 4. Basiclaly the runner wouild execute the terraform code and deploy the AWS EC2.
 
+
 ---
 ## Reference
 https://docs.github.com/en/actions/quickstart
