@@ -85,6 +85,6 @@ jobs:
       - name: Verify Hello-World
         id: verify
         run : |
-          echo $(terraform-bin output instance_public_dns) | tr -d '"')
-          curl $(echo $(terraform-bin output instance_public_dns) | tr -d '"'))
+          echo $(terraform output -json | jq -r .instance_public_ip.value)
+          curl $(terraform-bin output instance_public_dns) | tr -d '"')
         
