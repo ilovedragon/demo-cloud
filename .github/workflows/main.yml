@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
   push: 
 
-env:
-  URL: ""
-
 jobs: 
   Terraform-CI:
     name: Terraform CI
@@ -81,8 +78,7 @@ jobs:
         working-directory: ./terraform-method/terraform-files
         run: |
           terraform apply --auto-approve
-          echo "env.URL=$(terraform output -json | jq -r .instance_public_ip.value)"
-          curl $env.URL        
+                 
          
 
           
