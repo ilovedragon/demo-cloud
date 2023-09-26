@@ -81,7 +81,7 @@ jobs:
         working-directory: ./terraform-method/terraform-files
         run: |
           terraform apply --auto-approve
-          export URL=$(echo $(terraform output instance_public_dns) | tr -d '"')
+          export URL=$(echo $(terraform-bin output instance_public_dns) | tr -d '"')
           echo $URL     
           
       - name: Verify Hello-World
