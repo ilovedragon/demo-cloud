@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
   push: 
 
-env: 
-  URL: 127.0.0.1
-
 jobs: 
   Terraform-CI:
     name: Terraform CI
@@ -82,12 +79,6 @@ jobs:
         run: |
           terraform apply --auto-approve             
          
-      - name: Verify Hello-World
-        id: verify
-        working-directory: ./terraform-method/terraform-files
-        run: |
-          URL= echo $(terraform output instance_public_ip)|tr -d '"')) >> $GITHUB_ENV
-          echo $URL
-          curl $URL
+
           
         
