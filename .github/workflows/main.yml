@@ -86,7 +86,7 @@ jobs:
         id: verify
         working-directory: ./terraform-method/terraform-files
         run: |
-          export URL=$(terraform output instance_public_ip)|tr -d '"'))
+          URL= echo $(terraform output instance_public_ip)|tr -d '"')) >> $GITHUB_ENV
           echo $URL
           curl $URL
           
