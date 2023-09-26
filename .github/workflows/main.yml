@@ -45,9 +45,7 @@ jobs:
   Terraform-CD:
     needs: Terraform-CI
     name: Terraform CD
-    runs-on: ubuntu-latest
-    outputs: 
-      INSTANCE_PUBLIC_DNS: ${{steps.set-dns.outputs.instance_public_dns}}
+    runs-on: ubuntu-latest    
     steps:
       - name: Declare event
         run: echo "The Terraform Continuous Deployment is automatically triggered by a ${{ github.event_name }} event."
@@ -89,7 +87,7 @@ jobs:
          
       - name: Verify Hello-World
         id: verify
-        run: curl $INSTANCE_PUBLIC_DNS
+        run: curl ${{steps.set-dns.outputs.instance_public_dns}}
         
 
 
