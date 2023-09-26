@@ -85,11 +85,12 @@ jobs:
         id: set-dns
         working-directory: ./terraform-method/terraform-files
         run: |-
-          echo "instance_public_dns=$(terraform output -json | jq -r .instance_public_dns.value)" >> $GITHUB_OUTPUT
+         echo "instance_public_dns=$(terraform output instance_public_ip|tr -d '"')" >> $GITHUB_OUTPUT
          
       - name: Verify Hello-World
         id: verify
         run: curl ${{steps.set-dns.outputs.instance_public_dns}}
+        
 
 
           
