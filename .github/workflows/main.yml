@@ -83,7 +83,10 @@ jobs:
 
       - name: Set URL Environment Variable
         id: set_URL
-        run: export URL=$(terraform output instance_public_dns)
+        env: URL_set
+        run: |
+          export URL_set=$(terraform output instance_public_dns)
+          export URL=$URL_set
 
       - name: Verify Hello-World
         id: verify
