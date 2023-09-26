@@ -89,7 +89,7 @@ jobs:
          
       - name: Verify Hello-World
         id: verify
-        run: curl ${{steps.set-dns.outputs.instance_public_dns}}
+        run: curl $INSTANCE_PUBLIC_DNS
         
 
 
