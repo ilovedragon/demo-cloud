@@ -75,5 +75,13 @@ jobs:
 
       - name: Terraform apply
         id: apply
+        env: URL
         working-directory: ./terraform-method/terraform-files
-        run: terraform apply --auto-approve 
+        run: |
+          terraform apply --auto-approve 
+          URL = $terraofrm output instance_public_dns)
+
+      - name: Verify Hello-World
+        id: verify
+        run : curl $URL
+        
