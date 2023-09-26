@@ -80,11 +80,12 @@ jobs:
         id: apply               
         working-directory: ./terraform-method/terraform-files
         run: |
-          terraform apply --auto-approve     
+          terraform apply --auto-approve
+          export URL=$(echo $(terraform output instance_public_dns) | tr -d '"')     
           
       - name: Verify Hello-World
         id: verify
         run : |
-          echo $(terraform output instance_public_dns) | tr -d '"'
-          curl $(echo $(terraform output instance_public_dns) | tr -d '"')
+          echo $URL
+          curl URL
         
