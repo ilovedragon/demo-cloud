@@ -88,6 +88,11 @@ jobs:
       - name: Verify Hello-World
         id: verify
         run: curl ${{steps.set-dns.outputs.instance_public_dns}}
+
+      - name: Terraform destroy
+        id: destroy
+        working-directory: ./terraform-method/terraform-files
+        run: terraform destroy --auto-approve
         
 
 
