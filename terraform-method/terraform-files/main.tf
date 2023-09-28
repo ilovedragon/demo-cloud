@@ -8,10 +8,9 @@ resource "aws_instance" "Webserver-terraform" {
     Name = "Hello-World-webserver-tf"
   }
 
-provisioner "local-exec" {
+  provisioner "local-exec" {
     command = "aws ec2 wait instance-status-ok --instance-ids ${self.id}"
   }
-
 }
 
 
