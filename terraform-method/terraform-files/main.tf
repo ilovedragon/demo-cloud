@@ -9,14 +9,10 @@ resource "aws_instance" "Webserver-terraform" {
   }
 }
 
-data "aws_instance" "Webserver_status" {
-  instance_id = aws_instance.Webserver-terraforme.id
-}
-
 
 resource "null_resource" "check_instance_status" {
   triggers = {
-    instance_status = data.aws_instance.Webserver_status.status_checks
+    instance_status = data.aws_instance.Webserver-terraform.status_checks
   }
 
   provisioner "local-exec" {
