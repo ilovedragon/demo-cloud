@@ -7,17 +7,11 @@ resource "aws_instance" "Webserver-terraform" {
   tags = {
     Name = "Hello-World-webserver-tf"
   }
-}
 
-
-resource "null_resource" "check_instance_status" {
-  triggers = {
-    instance_status = data.aws_instance.Webserver-terraform.status_checks
+provisioner "local-exec" {
+    command = "aws ec2 wait instance-status-ok --instance-ids ${self.id}"
   }
 
-  provisioner "local-exec" {
-    command = "echo 'Instance status checks: ${jsonencode(triggers.instance_status)}'"
-  }
 }
 
 
