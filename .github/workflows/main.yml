@@ -83,8 +83,7 @@ jobs:
         id: set-dns
         working-directory: ./terraform-method/terraform-files
         run: |-
-         echo "instance_public_dns=$(terraform-bin output instance_public_dns|tr -d '"')" >> $GITHUB_OUTPUT
-         sleep 20s
+         echo "instance_public_dns=$(terraform-bin output instance_public_dns|tr -d '"')" >> $GITHUB_OUTPUT         
          
       - name: Verify Hello-World
         id: verify
